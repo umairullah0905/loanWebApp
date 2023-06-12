@@ -1,9 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { TOGGLE_BOOLEAN } from "./actionType";
+
 
 const initialState = {
   currentLoan: null,
   loading: false,
   error: false,
+  pay:false,
 };
 
 export const loanSlice = createSlice({
@@ -20,12 +23,23 @@ export const loanSlice = createSlice({
     fetchFailure: (state) => {
       state.loading = false;
       state.error = true;
+    },
+    payment: (state,action)=>{
+      switch(action.type){
+        case TOGGLE_BOOLEAN:
+          return{
+            ...state,
+            pay:action.payload
+          };
+        default:
+          return state;
+      }
     }
     
   },
 });
 
-export const { fetchStart, fetchSuccess, fetchFailure, like, dislike } =
+export const { fetchStart, fetchSuccess, fetchFailure} =
   loanSlice.actions;
 
 export default loanSlice.reducer;

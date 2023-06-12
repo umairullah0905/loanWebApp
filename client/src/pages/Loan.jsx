@@ -127,6 +127,9 @@ const Loan = () => {
     fetchData();
   }, [path, dispatch]);
 
+  const handlePay = async ()=>{
+    await axios.put(`/loans/pay/${path}`)
+  }
 
   return (
     <Container>
@@ -164,7 +167,7 @@ const Loan = () => {
               </Description>
             </ChannelDetail>
           </ChannelInfo>
-          <Subscribe>SUBSCRIBE</Subscribe>
+          <Subscribe onClick={handlePay}> {currentLoan.pay? "paid":"pay"}</Subscribe>
         </Channel>
         <Hr />
         <Comments/>
