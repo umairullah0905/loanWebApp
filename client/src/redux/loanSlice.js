@@ -21,10 +21,11 @@ export const loanSlice = createSlice({
       state.loading = false;
       state.error = true;
     }
+    
   },
 });
 
-export const { fetchStart, fetchSuccess, fetchFailure } =
+export const { fetchStart, fetchSuccess, fetchFailure, like, dislike } =
   loanSlice.actions;
 
 export default loanSlice.reducer;

@@ -128,6 +128,9 @@ const Menu = ({ darkMode, setDarkMode }) => {
           <SubscriptionsOutlinedIcon />
           MyLoans
         </Item>
+        <Item>
+          <Button onClick={handleLogout}>Sign in</Button>
+        </Item>
         </Link>
         <Hr />
         <Item>
@@ -188,10 +191,6 @@ const Menu = ({ darkMode, setDarkMode }) => {
         <Item>
           <HelpOutlineOutlinedIcon />
           Help
-        </Item>
-        <Item>
-          <HelpOutlineOutlinedIcon />
-          <Button onClick={handleLogout}>Sign in</Button>
         </Item>
         <Item onClick={() => setDarkMode(!darkMode)}>
           <SettingsBrightnessOutlinedIcon />

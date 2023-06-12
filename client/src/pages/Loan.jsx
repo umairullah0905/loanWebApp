@@ -117,11 +117,10 @@ const Loan = () => {
 
   const path = useLocation().pathname.split("/")[2];
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const loanRes = await axios.get(`/loans/find/${path}`);       
+        const loanRes = await axios.get(`/loans/find/${path}`);
         dispatch(fetchSuccess(loanRes.data));
       } catch (err) {}
     };
@@ -129,15 +128,12 @@ const Loan = () => {
   }, [path, dispatch]);
 
 
-  console.log(path);
-
-
   return (
     <Container>
       <Content>
         <Title>{currentLoan.title}</Title>
         <Details>
-          <Info>{currentLoan.amount} • {format(currentLoan.createdAt)}</Info>
+          <Info>{currentLoan.amount} • sdfasdf</Info>
           <Buttons>
             <Button>
               <ThumbUpOutlinedIcon /> 12342134
@@ -158,7 +154,7 @@ const Loan = () => {
           <ChannelInfo>
             <Image src="https://yt3.ggpht.com/yti/APfAmoE-Q0ZLJ4vk3vqmV4Kwp0sbrjxLyB8Q4ZgNsiRH=s88-c-k-c0x00ffffff-no-rj-mo" />
             <ChannelDetail>
-              <ChannelName>{currentLoan.name}</ChannelName>
+              <ChannelName>name</ChannelName>
               <ChannelCounter>200K subscribers</ChannelCounter>
               <Description>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.

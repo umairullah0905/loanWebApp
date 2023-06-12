@@ -6,9 +6,10 @@ import userRoutes from "./routes/users.js"
 import loanRoutes from "./routes/loans.js"
 import authRoutes from "./routes/auth.js"
 import cookieParser from "cookie-parser"
-
+import cors from "cors"
 
 const app = express();
+
 
 dotenv.config()
 
